@@ -57,13 +57,11 @@
 
         @{
             string frase = "nel mezzo del cammin di nostra vita";
-            string[] parole = frase.Split(' ');
+            int conteggio = frase.Split("a").Length - 1;            
         }
 
-        @foreach(string parola in parole){
-            
         }
-        <p>La lettera 'a' è presente: </p>
+        <p>La lettera 'a' è presente: <span>@conteggio</span></p>
 
 
     </div>
@@ -111,11 +109,10 @@
                 c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
         </strong></p>
         
-        @{
-            datetime.DayOfWeek;
-        }
+
         <p>a. 7 Giorni fa era il @datetime.AddDays(-7)</p>
-        <p>b. </p>
+        <p>b. Oggi è @datetime.ToString("ddd")</p>
+        <p>c. Il giorno della settimana del @datetime.AddYears(1) sarà @datetime.AddYears(1).ToString("ddd")</p>
     </div>
 
 
